@@ -1,2 +1,2 @@
-# AtividadesMySQL
-Repositório feito para upar atividades sobre data base MySQL na Generation Brasil.
+# Atividades MySQL E SpringBoot
+Repositório feito para upar atividades sobre data base MySQL e SpringBoot na Generation Brasil.
