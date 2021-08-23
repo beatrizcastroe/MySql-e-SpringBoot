@@ -1,2 +1,2 @@
 # Atividades MySQL E SpringBoot
-Repositório feito para upar atividades sobre data base MySQL e SpringBoot na Generation Brasil.
+Aulas desenvolvidas no curso da Generation - MySQL e SpringBoot.
