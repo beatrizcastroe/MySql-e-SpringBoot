@@ -18,10 +18,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table (name = "tb_categoria")
 public class Categoria {
 	
-	@OneToMany(mappedBy = "categoriaRelacionada", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"categoriaRelacionada"})
-	private List<Produtos> produtos = new ArrayList<>();
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -32,6 +28,21 @@ public class Categoria {
 	@NotBlank
 	private String descricao;
 
+	@OneToMany(mappedBy = "categoriaRelacionada", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"categoriaRelacionada"})
+	private List<Produtos> produtos = new ArrayList<>();
+
+	public List<Produtos> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produtos> produtos) {
+		this.produtos = produtos;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getDescricao() {
 		return descricao;

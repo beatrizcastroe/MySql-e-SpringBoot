@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.exercicio.LojaDeGames.Model.Produtos;
@@ -55,5 +56,15 @@ public class ProdutosController {
 	@DeleteMapping("/deletarproduto/{id}")
 	public void Delete (@PathVariable Long id) {
 		repository.deleteById(id);
+	}
+	
+	@GetMapping("/pesquisarProdutos")
+	public List<Produtos> pesquisarProdutos(@RequestParam String descricaop, @RequestParam String nome) {
+		return repository.pesquisarProdutos(descricaop, nome);
+	}
+	
+	@GetMapping("/todosprod")
+	public List<Produtos> nomeProdutos () {
+		return repository.nomeProdutos();
 	}
 }
